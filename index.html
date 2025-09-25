@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project I</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #f5f7ff;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.766), rgba(53, 50, 50, 0));
+            color: white;
+        }
+
+        .card-content-1 {
+            position: absolute;
+            bottom: 120px;
+            left: 100px;
+            z-index: 3;
+        }
+
+        .card-content h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .card-content p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            overflow: hidden;
+        }
+
+        .testimonial-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 700px;
+            margin: 0 10px;
+            position: relative;
+        }
+
+        .testimonial h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .testimonial p {
+            margin: 10px 0 0;
+            color: #777;
+        }
+
+        .stars {
+            color: #fbc02d;
+            margin-top: 10px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: #bbb;
+            border-radius: 50%;
+            margin: 0 5px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #333;
+        }
+
+        .slide {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand mt-4" href="#">
+                    <img style="width: 50px;" src="https://cdn-icons-png.flaticon.com/128/2102/2102647.png" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse mt-4 me-5" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Product</a>
+                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="#">Order</a>
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container mt-5 d-flex justify-content-between">
+        <div class="col" style="float: left; position: relative; top: 5em;">
+            <p class="fw-medium fs-5">こんにちは、私は</p>
+            <h1 class="fw-bold">Ahmad Bani</h1>
+            <p class="fs-5">日本国に行きたいの高校生</p>
+            <button class="btn btn-dark" style="background-color: #424874;">Download Resume</button>
+        </div>
+        <div class="col">
+            <img width="600px" src="img/knife_anime.jpg" alt="">
+        </div>
+    </div>
+    <div class="btn-group shadow-sm"
+        style="background-color: white; padding: 20px; position: absolute; left: 20%; bottom: 15%; border-radius: 20px;"
+        role="group" aria-label="Basic example">
+        <img height="30px" style="margin-left: 40px; margin-right: 40px;"
+            src="https://my.indihome.co.id/static/media/logo_indihome-dark-telkomsel.63e23e50.png" alt="">
+        <img height="40px" style="margin-left: 40px; margin-right: 40px;"
+            src="https://th.bing.com/th/id/OIP.ZTO1tggFZ-R_o9palZOiLgHaEK?rs=1&pid=ImgDetMain" alt="">
+        <img height="40px" style="margin-left: 40px; margin-right: 40px;"
+            src="https://th.bing.com/th/id/R.9a0bca2d1c7908c6161b8534e84f5bff?rik=ToPNIEJVnMdAMQ&riu=http%3a%2f%2fimg3.wikia.nocookie.net%2f__cb20121216034121%2flogopedia%2fimages%2fd%2fd8%2fTelkomsel.png&ehk=UzJjtE27%2bAYF7nDwLGwfPVBQIu0BDcuJFO%2bgQsctxQ0%3d&risl=&pid=ImgRaw&r=0"
+            alt="">
+        <img height="50px" style="margin-left: 40px; margin-right: 40px;"
+            src="https://grandioseautomation.com/wp-content/uploads/2020/12/hindustan-unilever-logo.png" alt="">
+        <img height="50px" style="margin-left: 40px; margin-right: 40px;"
+            src="https://th.bing.com/th/id/OIP.GV15Fp0iVvyBqa6K_dvVbQHaEo?rs=1&pid=ImgDetMain" alt="">
+    </div>
+    <div class="container" style="margin-top: 150px;">
+        <div class="row">
+            <div class="col">
+                <h3 class="fw-bold">の専門家</h3>
+                <p style="width: 650px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quae
+                    accusantium, aspernatur illo voluptatibus ea aut fugiat dolore eos earum. Quibusdam, eveniet unde.
+                    Nihil ea ipsa totam laudantium quia voluptatum! Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Consequuntur architecto voluptate fugiat est totam natus expedita, quasi dolorum vel doloribus
+                    consequatur ab delectus magni eveniet asperiores pariatur autem repellendus numquam!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="card" style="background-color: #e6e1f9; width: 18rem;">
+                    <img src="https://clipground.com/images/web-logo-png-white-7.png" class="card-img-top" alt="..."
+                        style="background-color: #4b4f7c; width: 75px; padding: 15px 20px 20px 20px; border: solid 1px; border-bottom-right-radius: 45%;">
+                    <div class="card-body mt-3 p-4">
+                        <h5 class="card-title">ウェブデザイン</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <a href="">
+                        <img style="width: 20px; padding-bottom: 20px; padding-top: 25px; position: relative; left: 250px;"
+                            src="https://cdn-icons-png.flaticon.com/128/16745/16745331.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/128/7991/7991178.png" class="card-img-top" alt="..."
+                        style="width: 75px; padding: 15px 20px 20px 20px;">
+                    <div class="card-body mt-3 p-4">
+                        <h5 class="card-title">ウェブデベロッパ</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <a href="">
+                        <img style="width: 20px; padding-bottom: 20px; padding-top: 25px; position: relative; left: 250px;"
+                            src="https://cdn-icons-png.flaticon.com/128/16745/16745331.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://cdn-icons-png.flaticon.com/128/59/59137.png" class="card-img-top" alt="..."
+                        style="width: 75px; padding: 15px 20px 20px 20px;">
+                    <div class="card-body mt-3 p-4">
+                        <h5 class="card-title">ワドプレスデベロッパ</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                    </div>
+                    <a href="">
+                        <img style="width: 20px; padding-bottom: 20px; padding-top: 25px; position: relative; left: 250px;"
+                            src="https://cdn-icons-png.flaticon.com/128/16745/16745331.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 150px;">
+        <div class="row d-flex justify-content-between">
+            <div class="col">
+                <img width="600px" src="img/Rectangle 8.png" alt="">
+            </div>
+            <div class="col" style="position: relative; top: 6rem;">
+                <h3 class="fw-bold">なぜ私?</h3>
+                <p class="fw-lighter">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi porro dolorem
+                    voluptatem aliquid iste quam eius consectetur, perferendis architecto nesciunt nisi, magnam eos
+                    distinctio amet ipsam. Dolorum voluptatem consequatur cumque! Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit.</p>
+                <button class="btn btn-dark" style="background-color: #424874;">Download Resume</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 150px;">
+        <div class="row">
+            <div class="col">
+                <h3 class="fw-bold">最後の仕事</h3>
+                <p style="width: 650px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quae
+                    accusantium, aspernatur illo voluptatibus ea aut fugiat dolore eos earum. Quibusdam, eveniet unde.
+                    Nihil ea ipsa totam laudantium quia voluptatum! Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Consequuntur architecto voluptate fugiat est totam natus expedita, quasi dolorum vel doloribus
+                    consequatur ab delectus magni eveniet asperiores pariatur autem repellendus numquam!</p>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row ms-3 me-3">
+            <div class="col">
+                <div class="card">
+                    <img alt="" height="322" src="img/Rectangle 9.png" width="350" />
+                    <div class="card-content">
+                        <h3>マクド</h3>
+                        <p>mcdonald.co.id</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img alt="" height="322" src="img/Rectangle 10.png" width="350" />
+                    <div class="card-content">
+                        <h3>ネスカフェ</h3>
+                        <p>nescafe.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img alt="" height="322" src="img/Rectangle 11.png" width="350" />
+                    <div class="card-content-1">
+                        <button class="btn btn-dark" style="background-color: #424874;">+ View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-5" style="margin-top: 150px;">
+        <div class="row">
+            <div class="col">
+                <h3 class="fw-bold">私のクライアントから</h3>
+                <p style="width: 650px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas quae
+                    accusantium, aspernatur illo voluptatibus ea aut fugiat dolore eos earum. Quibusdam, eveniet unde.
+                    Nihil ea ipsa totam laudantium quia voluptatum! Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Consequuntur architecto voluptate fugiat est totam natus expedita, quasi dolorum vel doloribus
+                    consequatur ab delectus magni eveniet asperiores pariatur autem repellendus numquam!</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide mb-5 mt-5">
+        <div class="carousel-container">
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <h3>Bobby Satria</h3>
+                    <p>CEO Mc Donald</p>
+                    <p> Ea laborum sit exercitation mollit magna aliquip cupidatat. Ullamco est amet ex ut eiusmod quis
+                        nisi aute amet.</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Rudi Widodo</h3>
+                    <p>CEO Nescafe</p>
+                    <p> Ea laborum sit exercitation mollit magna aliquip cupidatat. Ullamco est amet ex ut eiusmod quis
+                        nisi aute amet.</p>
+                </div>
+                <div class="testimonial">
+                    <h3>Robert Albert</h3>
+                    <p>CEO Telkomsel</p>
+                    <p> Ea laborum sit exercitation mollit magna aliquip <br> cupidatat. Ullamco est amet ex ut eiusmod
+                        quis
+                        nisi aute amet.</p>
+                </div>
+            </div>
+            <div class="dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(0)"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center mt-5">
+        <div class="row">
+            <div class="col-12 m-3">
+                <h4 class="fw-bold">Contact</h4>
+            </div>
+            <div class="col-12 m-3">
+                <h2 class="fw-medium">gamingmatch17@gmail.com</h2>
+            </div>
+            <div class="col-12 m-3">
+                <button class="btn btn-dark" style="background-color: #424874;">Hire me</button>
+            </div>
+            <div class="col-12 m-3">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn"><img width="32px"
+                            src="https://cdn-icons-png.flaticon.com/128/3661/3661391.png" alt=""></button>
+                    <button type="button" class="btn"><img width="32px"
+                            src="https://cdn-icons-png.flaticon.com/128/2175/2175193.png" alt=""></button>
+                    <button type="button" class="btn"><img width="32px"
+                            src="https://cdn-icons-png.flaticon.com/128/3082/3082383.png" alt=""></button>
+                    <button type="button" class="btn"><img width="32px"
+                            src="https://cdn-icons-png.flaticon.com/128/2077/2077502.png" alt=""></button>
+                    <button type="button" class="btn"><img width="32px"
+                            src="https://cdn-icons-png.flaticon.com/128/3059/3059484.png" alt=""></button>
+                </div>
+            </div>
+            <div class="col-12 m-3">
+                <h2>(62) 838-953-658</h2>
+            </div>
+            <div class="col m-5">
+                <p>Copyright© 2099 </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.testimonial-container');
+            const dots = document.querySelectorAll('.dot');
+            if (index >= slides.children.length) {
+                currentIndex = 0;
+            } else if (index < 1) {
+                currentIndex = slides.children.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            slides.style.transform = `translateX(${-currentIndex * 320}px)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        // setInterval(() => {
+        //     showSlide(currentIndex + 1);
+        // }, 3000);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
