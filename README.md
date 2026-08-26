@@ -1,21 +1,19 @@
 # Portfolio-template
 
-A template for creating personal portfolio websites.
-
-## Features
-- Clean and modern design
-- Easy to customize
-- Responsive layout
-
-## Technology
-- HTML
-- CSS
-- JavaScript
-
-## Getting Started
-1. Clone this repository
-2. Customize the content in `index.html`
-3. Open in your browser to view
+> Portfolio-template is template portofolio made with html
 
 ---
-*Created by Usa-bunny*
+
+## 🚀 Getting Started
+
+### Installation
+1. Clone the repository:
+~~~bash
+git clone https://github.com/Usa-bunny/Portfolio-template.git
+cd Portfolio-template
+~~~
+2. Open `index.html` in your browser.
+
+---
+
+<p align="center">🎮 <strong>Created by <a href="https://github.com/Usa-bunny">Usa-bunny</a></strong></p>
